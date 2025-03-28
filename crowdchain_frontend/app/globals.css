@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 196 100% 50%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 196 100% 50%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-floating-light {
+    animation: floating-light 2.5s infinite ease-in-out;
+  }
+
+  .animate-floating-img {
+    animation: floating-img 10s ease-in-out infinite;
+  }
+
+  .animate-flash-text {
+    animation: flash-text 0.5s infinite;
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes floating-light {
+    0% {
+      transform: rotate(-5deg) translateY(-5%);
+      opacity: 0.5;
+    }
+    50% {
+      transform: rotate(5deg) translateY(5%);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-5deg) translateY(-5%);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes floating-img {
+    0% {
+      transform: translate(-2%, 2%) scaleY(0.95) rotate(-5deg);
+    }
+    50% {
+      transform: translate(2%, -2%) scaleY(1) rotate(5deg);
+    }
+    100% {
+      transform: translate(-2%, 2%) scaleY(0.95) rotate(-5deg);
+    }
+  }
+
+  @keyframes flash-text {
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+}
+
