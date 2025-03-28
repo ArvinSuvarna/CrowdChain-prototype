@@ -145,7 +145,7 @@ export default function Home() {
             </NavLink>
 
             <div className="ml-2">
-              <NetworkStatus network="Ethereum Testnet" />
+              <NetworkStatus network="Polygon Testnet" />
             </div>
           </div>
 
